@@ -1,0 +1,224 @@
+.root {
+    background-color: #000000;
+    font-family: 'Inter', 'Arial', sans-serif;
+    text-rendering: optimizeLegibility;
+    margin: 0 auto;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.root__content {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 45px 199px 40px;
+    border-bottom: 1px solid #545454;
+}
+
+@media screen and (max-width: 1024px) {
+    .header {
+        padding: 28px 80px 31px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header {
+        padding: 28px 27px 31px;
+    }
+}
+
+.profile {
+    padding: 45px 199px 40px;
+    display: flex;
+    padding-bottom: 50px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1080px) {
+    .profile {
+        padding: 42px 40px 36px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        padding: 42px 19px 36px;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+.profile__avatar {
+    grid-area: avatar;
+    max-width: 120px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width:540px) {
+    .profile__avatar {
+        justify-self: center;
+    }
+}
+
+.profile__section {
+    display: grid;
+    grid-template-areas: 
+        'avatar name button'
+        'avatar description description';
+    column-gap: 17px;
+    row-gap: 16px;
+}
+
+@media screen and (max-width: 540px) {
+    .profile__section {
+        margin: 0;
+        grid-template-areas: 
+            'avatar avatar'
+            'name button'
+            'description description';
+        align-items: center;
+    }
+}
+
+.profile__edit {
+    grid-area: button;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/edit-button.svg);
+    background-color: #000;
+    border: none;
+    background-repeat: no-repeat;
+    align-self: center;
+}
+
+.profile__information {
+    margin-right: 17px;
+}
+
+.profile__name {
+    grid-area: name;
+    margin: 0;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 56px;
+}
+
+@media screen and (max-width:540px) {
+    .profile__name {
+        font-weight: 500;
+    font-size: 27px;
+    text-align: center;
+    }
+}
+
+.profile__description {
+    grid-area: description;
+    margin: 0;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.profile__add {
+    height: 50px;
+    width: 150px;
+    background-color: #000;
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    margin-top: 12px;
+    font-size: 24px;
+    color: #fff;
+}
+
+@media screen and (max-width:768px) {
+    .profile__add {
+        width: 100%;
+        margin-top: 36px;
+    }
+}
+
+.grid {
+    padding: 45px 199px 40px;
+    display: grid;
+    grid-template-columns: repeat(3,284px);
+    column-gap: 18px;
+    row-gap: 21px;
+    padding-bottom: 66px;
+    justify-content: center;
+}
+
+@media screen and (max-width: 920px) {
+    .grid {
+        grid-template-columns: repeat(2,282px);
+        padding: 0 19px 48px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .grid {
+        grid-template-columns: 282px;
+        padding: 0 19px 48px;
+        justify-content: center;
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-areas:
+        'photo photo'
+        'title like';
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    color: #000;
+}
+
+.cards__photo {
+    width: 100%;
+    grid-area: photo;
+    height: 282px;
+}
+
+.cards__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    padding: 21px 15px;
+}
+
+.cards__like {
+    height: 21px;
+    background-image: url(../images/cards-like.svg);
+    background-repeat: no-repeat;
+    width: 21px;
+    padding: 0;
+    border: none;
+    background-color: #fff;
+    justify-self: end;
+    align-self: center;
+    margin-right: 29px;
+}
+
+.footer {
+    padding: 45px 199px 40px;
+    padding-bottom: 60px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #545454;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer {
+        padding: 0 80px 31px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .footer {
+        padding: 0 19px 36px;
+    }
+}
