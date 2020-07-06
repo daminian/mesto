@@ -1,0 +1,22 @@
+.profile__add {
+    height: 50px;
+    width: 150px;
+    background-color: #000;
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    margin-top: 12px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.profile__add:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    .profile__add {
+        width: 100%;
+        margin-top: 36px;
+    }
+}

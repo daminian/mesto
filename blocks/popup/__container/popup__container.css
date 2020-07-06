@@ -1,0 +1,43 @@
+.popup__container {
+    display: flex;
+    flex-direction: column;
+    min-width: 430px;
+    position: fixed;
+    top: 21vh;
+    left: 32vw;
+    z-index: 1;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:970px) {
+    .popup__container {
+        top: 18vh;
+        left: 25vw;
+    }
+}
+
+@media screen and (max-width:680px) {
+    .popup__container {
+        left: 17vw;
+    }
+}
+
+@media screen and (max-width:590px) {
+    .popup__container {
+        left: 10vw;
+    }
+}
+
+@media screen and (max-width:495px) {
+    .popup__container {
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .popup__container {
+        left: 2vw;
+    }
+}

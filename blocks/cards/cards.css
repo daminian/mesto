@@ -1,0 +1,14 @@
+@import url(./__like/cards__like.css);
+@import url(./__photo/cards__photo.css);
+@import url(./__title/cards__title.css);
+
+.cards {
+    display: grid;
+    grid-template-areas:
+        'photo photo'
+        'title like';
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    color: #000;
+}

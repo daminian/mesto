@@ -1,0 +1,29 @@
+@import url(./__add/profile__add.css);
+@import url(./__avatar/profile__avatar.css);
+@import url(./__edit/profile__edit.css);
+@import url(./__information/profile__information.css);
+@import url(./__job/profile__job.css);
+@import url(./__name/profile__name.css);
+@import url(./__section/profile__section.css);
+
+.profile {
+    padding: 45px 199px 40px;
+    display: flex;
+    padding-bottom: 50px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1080px) {
+    .profile {
+        padding: 42px 40px 36px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        padding: 42px 19px 36px;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+}
