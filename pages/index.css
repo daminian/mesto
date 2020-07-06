@@ -29,6 +29,10 @@
     }
 }
 
+.header__logo:hover {
+    background-color: #000;
+}
+
 .profile {
     padding: 45px 199px 40px;
     display: flex;
@@ -67,7 +71,7 @@
     display: grid;
     grid-template-areas: 
         'avatar name button'
-        'avatar description description';
+        'avatar job job';
     column-gap: 17px;
     row-gap: 16px;
 }
@@ -78,7 +82,7 @@
         grid-template-areas: 
             'avatar avatar'
             'name button'
-            'description description';
+            'job job';
         align-items: center;
     }
 }
@@ -92,6 +96,11 @@
     border: none;
     background-repeat: no-repeat;
     align-self: center;
+}
+
+.profile__edit:hover {
+    opacity: 0.6;
+    cursor: pointer;
 }
 
 .profile__information {
@@ -114,8 +123,8 @@
     }
 }
 
-.profile__description {
-    grid-area: description;
+.profile__job {
+    grid-area: job;
     margin: 0;
     font-size: 18px;
     line-height: 22px;
@@ -130,6 +139,11 @@
     margin-top: 12px;
     font-size: 24px;
     color: #fff;
+}
+
+.profile__add:hover {
+    opacity: 0.6;
+    cursor: pointer;
 }
 
 @media screen and (max-width:768px) {
@@ -221,4 +235,95 @@
     .footer {
         padding: 0 19px 36px;
     }
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.popup_opened {
+    display: block;
+}
+
+.popup__container {
+    display: flex;
+    flex-direction: column;
+    min-width: 430px;
+    position: fixed;
+    top: 23%;
+    left: 35%;
+    z-index: 1;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+
+.popup__overlay {
+    width: 100%;
+    background-color: black;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.popup__title{
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0 auto;
+    margin-top: 34px;
+}
+
+.popup__feilds{
+    margin: 0 auto;
+    width: 83%;
+    font-size: 14px;
+    line-height: 17px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+.popup__name {
+    margin-top: 54px;
+}
+
+.popup__job {
+    margin-top: 29px;
+}
+
+.popup__submit {
+    min-height: 50px;
+    margin: 48px auto 36px;
+    width: 83%;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.popup__close {
+    height: 40px;
+    position: absolute;
+    top: -40px;
+    left: 430px;
+}
+
+.popup__close:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.popup__submit:hover {
+    opacity: 0.6;
+    cursor: pointer;
 }
