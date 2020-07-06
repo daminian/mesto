@@ -17,5 +17,5 @@
 * Figma
 
 **Ссылки**
-* [Ссылка на сайт](https://daminian.github.io/russian-travel/)
+* [Ссылка на сайт](https://daminian.github.io/mesto/)
 * [Ссылка на макет в Figma](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)

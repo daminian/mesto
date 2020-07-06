@@ -9,3 +9,15 @@
     opacity: 0.6;
     cursor: pointer;
 }
+
+@media screen and (max-width:495px) {
+    .popup__close {
+        left: 320px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .popup__close {
+        top: 330px;
+        left: 134px;
+    }
