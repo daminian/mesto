@@ -5,6 +5,7 @@
         'avatar job job';
     column-gap: 17px;
     row-gap: 16px;
+    padding-right: 265px;
 }
 
 @media screen and (max-width: 540px) {
@@ -15,5 +16,6 @@
             'name button'
             'job job';
         align-items: center;
+        padding-right: 0;
     }
 }
