@@ -23,43 +23,31 @@
             <button class="profile__add"></button>
         </section>
         <section class="grid">
-            <div class="cards">
-                <img src="./images/altai.jpg" alt="" class="cards__photo">
-                <h2 class="cards__title">Алтай</h2>
-                <button class="cards__like"></button>
-            </div>
-            <div class="cards">
-                <img src="./images/bashkortostan.jpg" alt="" class="cards__photo">
-                <h2 class="cards__title">Республика Башкортостан</h2>
-                <button class="cards__like"></button>
-            </div>
-            <div class="cards">
-                <img src="./images/dombay.jpg" alt="" class="cards__photo">
-                <h2 class="cards__title">Домбай</h2>
-                <button class="cards__like"></button>
-            </div>
-            <div class="cards">
-                <img src="./images/elbrus.jpg" alt="" class="cards__photo">
-                <h2 class="cards__title">Гора Эльбрус</h2>
-                <button class="cards__like"></button>
-            </div>
-            <div class="cards">
-                <img src="./images/karachevsk.jpg" alt="" class="cards__photo">
-                <h2 class="cards__title">Карачаево-Черкеск</h2>
-                <button class="cards__like"></button>
-            </div>
-            <div class="cards">
-                <img src="./images/saiberian.jpg" alt="" class="cards__photo">
-                <h2 class="cards__title">Сибирь</h2>
-                <button class="cards__like"></button>
-            </div>
+            <template id="card">
+                <div class="cards">
+                    <button type="button" class="cards__trash"></button>
+                    <img alt="" class="cards__photo">
+                    <h2 class="cards__name"></h2>
+                    <button class="cards__like"></button>
+                </div>
+            </template>
         </section>
-        <section class="popup">
+        <section class="popup popup__profile">
             <form class="popup__container">
                 <button type="button" class="popup__close"></button>
-                <h3 class="popup__title">Редактировать профиль</h3>
+                <h3 class="popup__title popup__title_profile">Редактировать профиль</h3>
                 <input type="text" class="popup__fields popup__name" value="">
                 <input type="text" class="popup__fields popup__job" value="">
+                <button type="submit" class="popup__submit">Сохранить</button>
+            </form>
+            <div class="popup__overlay"></div>
+        </section>
+        <section class="popup popup__add">
+            <form class="popup__container">
+                <button type="button" class="popup__close"></button>
+                <h3 class="popup__title popup__title_add">Новое место</h3>
+                <input type="text" class="popup__fields popup__mesto" value="" placeholder="Название">
+                <input type="url" class="popup__fields popup__links" value="" placeholder="Ссылка на картинку">
                 <button type="submit" class="popup__submit">Сохранить</button>
             </form>
             <div class="popup__overlay"></div>

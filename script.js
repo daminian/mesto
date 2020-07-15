@@ -3,19 +3,20 @@ let profile = document.querySelector('.profile')
 let editButton = profile.querySelector('.profile__edit');
 let popupClose = popup.querySelector('.popup__close');
 let formElement = popup.querySelector('.popup__container');
+let profilePopup = document.querySelector('.popup__profile');
 
 function openPopup() {
-popup.classList.add('popup__opened');
-let nameInput = popup.querySelector('.popup__name');
-let jobInput = popup.querySelector('.popup__job');
-let nameOutput = profile.querySelector('.profile__name');
-let jobOtput = profile.querySelector('.profile__job');
-nameInput.value = nameOutput.textContent;
-jobInput.value = jobOtput.textContent;
+    profilePopup.classList.add('popup__opened');
+    let nameInput = popup.querySelector('.popup__name');
+    let jobInput = popup.querySelector('.popup__job');
+    let nameOutput = profile.querySelector('.profile__name');
+    let jobOtput = profile.querySelector('.profile__job');
+    nameInput.value = nameOutput.textContent;
+    jobInput.value = jobOtput.textContent;
 }
 
 function closePopup() {
- popup.classList.remove('popup__opened');  
+    popup.classList.remove('popup__opened');  
 }
 
 editButton.addEventListener('click', openPopup);
@@ -34,3 +35,91 @@ function formSubmitHandler (evt) {
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
+
+
+
+let addPopup = document.querySelector('.popup__add');
+let addButton = document.querySelector('.profile__add');
+let addClose = addPopup.querySelector('.popup__close');
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+];
+
+const cardTemplate = document.querySelector('#card').content;
+const grid = document.querySelector('.grid');
+
+initialCards.map(function addCard({name, link}){
+    const cardElement = cardTemplate.cloneNode(true);
+    cardElement.querySelector('.cards__name').textContent = name;
+    cardElement.querySelector('.cards__photo').src = link;
+    cardElement.querySelector('.cards__like').addEventListener('click', function (evt){
+        evt.target.classList.toggle('cards__like_active');
+    });
+
+    grid.append(cardElement);
+});
+
+function openAdd() {
+    addPopup.classList.add('popup__opened');
+}
+
+addButton.addEventListener('click', openAdd);
+
+
+
+function addClosePopup() {
+    addPopup.classList.remove('popup__opened');
+}
+
+addClose.addEventListener('click', addClosePopup);
+
+let addElement = addPopup.querySelector('.popup__container')
+
+function formSubmit (evt) {
+    evt.preventDefault();
+    let mestoInput = addPopup.querySelector('.popup__mesto').value;
+    let linkInput = addPopup.querySelector('.popup__links').value;
+    
+    const cardElement = cardTemplate.cloneNode(true);
+    cardElement.querySelector('.cards__name').textContent = mestoInput;
+    cardElement.querySelector('.cards__photo').src = linkInput;
+    cardElement.querySelector('.cards__like').addEventListener('click', function (evt){
+        evt.target.classList.toggle('cards__like_active');
+    });
+
+    grid.prepend(cardElement);
+    
+    addClosePopup();  
+}
+
+addElement.addEventListener('submit', formSubmit);
+
+const deletButton = document.querySelector('.cards__trash');
+
+deletButton.addEventListener('click', function () {
+    const item = document.querySelector('.cards');
+    item.remove();
+});

@@ -32,12 +32,6 @@
 
 @media screen and (max-width:495px) {
     .popup__container {
-        min-width: auto;
-    }
-}
-
-@media screen and (max-width:340px) {
-    .popup__container {
-        left: 2vw;
+        min-width: 240px;
     }
 }
