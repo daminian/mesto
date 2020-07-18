@@ -71,16 +71,20 @@ const initialCards = [
 const cardTemplate = document.querySelector('#card').content;
 const grid = document.querySelector('.grid');
 
-initialCards.map(function addCard({name, link}){
+initialCards.map(function cardsAdd({name, link}){
     const cardElement = cardTemplate.cloneNode(true);
     cardElement.querySelector('.cards__name').textContent = name;
     cardElement.querySelector('.cards__photo').src = link;
     cardElement.querySelector('.cards__like').addEventListener('click', function (evt){
         evt.target.classList.toggle('cards__like_active');
     });
-
+    cardElement.querySelector('.cards__trash').addEventListener('click', function (evt){
+        evt.target.closest('.cards').remove();
+    });
     grid.append(cardElement);
 });
+
+
 
 function openAdd() {
     addPopup.classList.add('popup__opened');
@@ -109,6 +113,9 @@ function formSubmit (evt) {
     cardElement.querySelector('.cards__like').addEventListener('click', function (evt){
         evt.target.classList.toggle('cards__like_active');
     });
+    cardElement.querySelector('.cards__trash').addEventListener('click', function (evt){
+        evt.target.closest('.cards').remove();
+    });
 
     grid.prepend(cardElement);
     
@@ -117,9 +124,3 @@ function formSubmit (evt) {
 
 addElement.addEventListener('submit', formSubmit);
 
-const deletButton = document.querySelector('.cards__trash');
-
-deletButton.addEventListener('click', function () {
-    const item = document.querySelector('.cards');
-    item.remove();
-});
