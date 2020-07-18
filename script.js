@@ -70,8 +70,12 @@ const initialCards = [
 
 const cardTemplate = document.querySelector('#card').content;
 const grid = document.querySelector('.grid');
+const card = grid.querySelector('.cards__photo');
+const cardPopup = document.querySelector('.popup__card');
 
-initialCards.map(function cardsAdd({name, link}){
+
+
+initialCards.forEach(function cardsAdd({name, link}){
     const cardElement = cardTemplate.cloneNode(true);
     cardElement.querySelector('.cards__name').textContent = name;
     cardElement.querySelector('.cards__photo').src = link;
@@ -81,10 +85,16 @@ initialCards.map(function cardsAdd({name, link}){
     cardElement.querySelector('.cards__trash').addEventListener('click', function (evt){
         evt.target.closest('.cards').remove();
     });
+    cardElement.querySelector('.cards__photo').addEventListener('click', function(){
+            cardPopup.classList.add('popup__opened');
+            let image = cardPopup.querySelector('.popup__image');
+            let cardName = cardPopup.querySelector('.popup__image-title');
+            image.src = link;
+            cardName.textContent = name;
+
+    });
     grid.append(cardElement);
 });
-
-
 
 function openAdd() {
     addPopup.classList.add('popup__opened');
@@ -116,6 +126,13 @@ function formSubmit (evt) {
     cardElement.querySelector('.cards__trash').addEventListener('click', function (evt){
         evt.target.closest('.cards').remove();
     });
+    cardElement.querySelector('.cards__photo').addEventListener('click', function(){
+            cardPopup.classList.add('popup__opened');
+            let image = cardPopup.querySelector('.popup__image');
+            let cardName = cardPopup.querySelector('.popup__image-title');
+            image.src = linkInput;
+            cardName.textContent = mestoInput;
+    });
 
     grid.prepend(cardElement);
     
@@ -124,3 +141,20 @@ function formSubmit (evt) {
 
 addElement.addEventListener('submit', formSubmit);
 
+
+
+function openCard() {
+    cardPopup.classList.add('popup__opened');
+    let image = cardPopup.querySelector('.popup__image');
+    let cardName = cardPopup.querySelector('.popup__image-title');
+    image.src = grid.querySelector('.cards__photo').src;
+    cardName.textContent = grid.querySelector('.cards__name').textContent;
+}
+
+const cardCloseButton = document.querySelector('.popup__close_card');
+
+function closeCard() {
+    cardPopup.classList.remove('popup__opened');
+}
+
+cardCloseButton.addEventListener('click', closeCard);

@@ -1,3 +1,7 @@
+@import url(./_profile/popup__close_profile.css);
+@import url(./_add/popup__close_add.css);
+@import url(./_card/popup__close_card.css);
+
 .popup__close {
     background-image: url(../../../images/popup-close_icon.svg);
     height: 40px;
@@ -6,23 +10,9 @@
     border: none;
     background-color: rgba(0,0,0,0);
     position: absolute;
-    top: -40px;
-    left: 430px;
 }
 
 .popup__close:hover {
     opacity: 0.6;
     cursor: pointer;
 }
-
-@media screen and (max-width:495px) {
-    .popup__close {
-        left: 320px;
-    }
-}
-
-@media screen and (max-width:340px) {
-    .popup__close {
-        top: -32px;
-        left: 245px;
-    }

@@ -1,0 +1,16 @@
+.popup__close_add{
+    top: -40px;
+    left: 430px;
+}
+
+@media screen and (max-width:495px) {
+    .popup__close_add {
+        left: 320px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .popup__close_add {
+        top: -32px;
+        left: 245px;
+    }

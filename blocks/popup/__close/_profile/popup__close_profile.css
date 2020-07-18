@@ -1,0 +1,16 @@
+.popup__close_profile {
+    top: -40px;
+    left: 430px;
+}
+
+@media screen and (max-width:495px) {
+    .popup__close_profile {
+        left: 320px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .popup__close_profile {
+        top: -32px;
+        left: 278px;
+    }
