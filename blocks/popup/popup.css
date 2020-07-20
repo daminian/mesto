@@ -12,7 +12,6 @@
 @import url(./__links/popup__links.css);
 @import url(./__image/popup__image.css);
 @import url(./__image-container/popup__image-container.css);
-@import url(./__opacity/popup__opacity.css);
 
 .popup {
     display: flex;
