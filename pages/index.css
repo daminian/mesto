@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url(../vendor/normalize.css);
 @import url(../vendor/inter/inter.css);
 @import url(../blocks/root/root.css);
@@ -22,3 +23,29 @@
     font-size: 14px;
     line-height: 17px;
   }
+=======
+@import url(../vendor/normalize.css);
+@import url(../vendor/inter/inter.css);
+@import url(../blocks/root/root.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/grid/grid.css);
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__opened/popup__opened.css);
+@import url(../blocks/cards/__like/_active/cards__like_active.css);
+@import url(../blocks/popup/__container/_add/popup__container_add.css);
+
+.popup__field {
+    border: 0;
+    width: 100%;
+    padding-bottom: 13px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+    border-color: rgba(0, 0, 0, .2);
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
+>>>>>>> 81cbaba8f16ef24d2ea96d0d2bf49217baa5b60e
