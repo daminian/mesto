@@ -159,3 +159,4 @@ function closeCard() {
 }
 
 cardCloseButton.addEventListener('click', closeCard);
+
