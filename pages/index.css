@@ -9,3 +9,16 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__opened/popup__opened.css);
 @import url(../blocks/cards/__like/_active/cards__like_active.css);
+@import url(../blocks/popup/__container/_add/popup__container_add.css);
+
+.popup__field {
+    border: 0;
+    width: 100%;
+    padding-bottom: 13px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+    border-color: rgba(0, 0, 0, .2);
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
