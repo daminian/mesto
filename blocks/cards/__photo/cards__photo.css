@@ -2,4 +2,9 @@
     width: 100%;
     grid-area: photo;
     height: 282px;
+    
+}
+
+.cards__photo:hover {
+    cursor: pointer;
 }

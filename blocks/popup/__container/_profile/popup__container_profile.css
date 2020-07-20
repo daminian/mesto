@@ -1,0 +1,38 @@
+.popup__container_profile {
+    min-width: 430px;
+    top: 21vh;
+    left: 32vw;
+    background-color: white;
+    color: #000;
+}
+
+@media screen and (max-width:970px) {
+    .popup__container_profile {
+        top: 18vh;
+        left: 25vw;
+    }
+}
+
+@media screen and (max-width:680px) {
+    .popup__container_profile {
+        left: 17vw;
+    }
+}
+
+@media screen and (max-width:590px) {
+    .popup__container_profile {
+        left: 10vw;
+    }
+}
+
+@media screen and (max-width:495px) {
+    .popup__container_profile {
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .popup__container_profile {
+        left: 2vw;
+    }
+}

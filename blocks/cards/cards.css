@@ -1,6 +1,7 @@
 @import url(./__like/cards__like.css);
 @import url(./__photo/cards__photo.css);
-@import url(./__title/cards__title.css);
+@import url(./__name/cards__name.css);
+@import url(./__trash/cards__trash.css);
 
 .cards {
     display: grid;
@@ -11,4 +12,5 @@
     overflow: hidden;
     background-color: #fff;
     color: #000;
+    position: relative;
 }

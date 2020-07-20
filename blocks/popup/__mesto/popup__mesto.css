@@ -1,0 +1,9 @@
+.popup__mesto {
+    margin-top: 54px;
+}
+
+@media screen and (max-width:495px) {
+    .popup__mesto {
+        margin-top: 36px;
+    }
+}
