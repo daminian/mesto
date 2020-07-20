@@ -1,33 +1,9 @@
 .popup__container_add {
     min-width: 430px;
-    position: fixed;
-    top: 21vh;
-    left: 32vw;
+    color: black;
+    background: white;
+    display: flex;
+    flex-direction: column;
     background-color: white;
     color: #000;
-}
-
-@media screen and (max-width:970px) {
-    .popup__container_add {
-        top: 18vh;
-        left: 25vw;
-    }
-}
-
-@media screen and (max-width:680px) {
-    .popup__container_add {
-        left: 17vw;
-    }
-}
-
-@media screen and (max-width:590px) {
-    .popup__container_add {
-        left: 9vw;
-    }
-}
-
-@media screen and (max-width:495px) {
-    .popup__container_add {
-        min-width: 240px;
-    }
 }

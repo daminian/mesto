@@ -4,9 +4,10 @@ let editButton = profile.querySelector('.profile__edit');
 let popupClose = popup.querySelector('.popup__close');
 let formElement = popup.querySelector('.popup__container');
 let profilePopup = document.querySelector('.popup__profile');
+let conteiner = popup.querySelector('.popup__container_profile');
 
 function openPopup() {
-    profilePopup.classList.add('popup__opened');
+    profilePopup.classList.add('popup_opened');
     let nameInput = popup.querySelector('.popup__name');
     let jobInput = popup.querySelector('.popup__job');
     let nameOutput = profile.querySelector('.profile__name');
@@ -16,7 +17,7 @@ function openPopup() {
 }
 
 function closePopup() {
-    popup.classList.remove('popup__opened');  
+popup.classList.remove('popup_opened');
 }
 
 editButton.addEventListener('click', openPopup);
@@ -86,7 +87,7 @@ initialCards.forEach(function cardsAdd({name, link}){
         evt.target.closest('.cards').remove();
     });
     cardElement.querySelector('.cards__photo').addEventListener('click', function(){
-            cardPopup.classList.add('popup__opened');
+            cardPopup.classList.add('popup_opened');
             let image = cardPopup.querySelector('.popup__image');
             let cardName = cardPopup.querySelector('.popup__image-title');
             image.src = link;
@@ -97,7 +98,7 @@ initialCards.forEach(function cardsAdd({name, link}){
 });
 
 function openAdd() {
-    addPopup.classList.add('popup__opened');
+    addPopup.classList.add('popup_opened');
 }
 
 addButton.addEventListener('click', openAdd);
@@ -105,7 +106,7 @@ addButton.addEventListener('click', openAdd);
 
 
 function addClosePopup() {
-    addPopup.classList.remove('popup__opened');
+    addPopup.classList.remove('popup_opened');
 }
 
 addClose.addEventListener('click', addClosePopup);
@@ -127,7 +128,7 @@ function formSubmit (evt) {
         evt.target.closest('.cards').remove();
     });
     cardElement.querySelector('.cards__photo').addEventListener('click', function(){
-            cardPopup.classList.add('popup__opened');
+            cardPopup.classList.add('popup_opened');
             let image = cardPopup.querySelector('.popup__image');
             let cardName = cardPopup.querySelector('.popup__image-title');
             image.src = linkInput;
@@ -144,7 +145,7 @@ addElement.addEventListener('submit', formSubmit);
 
 
 function openCard() {
-    cardPopup.classList.add('popup__opened');
+    cardPopup.classList.add('popup_opened');
     let image = cardPopup.querySelector('.popup__image');
     let cardName = cardPopup.querySelector('.popup__image-title');
     image.src = grid.querySelector('.cards__photo').src;
@@ -154,7 +155,8 @@ function openCard() {
 const cardCloseButton = document.querySelector('.popup__close_card');
 
 function closeCard() {
-    cardPopup.classList.remove('popup__opened');
+    cardPopup.classList.remove('popup_opened');
 }
 
 cardCloseButton.addEventListener('click', closeCard);
+
