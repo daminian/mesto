@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let popup = document.querySelector('.popup');
 let profile = document.querySelector('.profile')
 let editButton = profile.querySelector('.profile__edit');
