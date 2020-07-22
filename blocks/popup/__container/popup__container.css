@@ -1,10 +1,23 @@
-@import url(./_profile/popup__container_profile.css);
-@import url(./_add/popup__container_add.css);
-@import url(./_card/popup__container_card.css);
-
 .popup__container {
+    min-width: 430px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: #000;
     border-radius: 10px;
-    padding: 34px 0 36px;
     position: relative;
     box-sizing: border-box;
+  }
+
+  
+  @media screen and (max-width:487px) {
+    .popup__container {
+      min-width: 315px;
+    }
+  }
+
+  @media screen and (max-width:335px) {
+    .popup__container {
+      min-width: 245px;
+    }
   }

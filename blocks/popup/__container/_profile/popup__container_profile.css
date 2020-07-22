@@ -1,7 +1,0 @@
-.popup__container_profile {
-    min-width: 430px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    color: #000;
-}
