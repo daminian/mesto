@@ -14,7 +14,6 @@
 @import url(./__links/popup__links.css);
 @import url(./__image/popup__image.css);
 @import url(./__image-container/popup__image-container.css);
-@import url(./__container/_card/popup__container_card.css);
 
 .popup {
     display: flex;
