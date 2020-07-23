@@ -1,5 +1,4 @@
 // Wrappers
-// const popup = document.querySelector('.popup');
 const editProfile = document.querySelector('.popup__profile');
 const addCard = document.querySelector('.popup__add');
 const cardPopup = document.querySelector('.popup__card');
