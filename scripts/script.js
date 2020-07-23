@@ -3,11 +3,6 @@ const editProfile = document.querySelector('.popup__profile');
 const addCard = document.querySelector('.popup__add');
 const cardPopup = document.querySelector('.popup__card');
 
-// Forms
-const editForm = editProfile.querySelector('.popup__form');
-const addCardForm = addCard.querySelector('.popup__form');
-const cardForm = cardPopup.querySelector('.popup__form');
-
 // Open Button
 const profileEditButton = document.querySelector('.profile__edit');
 const addButton = document.querySelector('.profile__add');
@@ -30,8 +25,8 @@ const grid = document.querySelector('.grid');
 const cardTemplate = document.querySelector('.template-card').content.querySelector('.cards');
 
 // Form data
-const nameInput = editForm.querySelector('.popup__name');
-const jobInput = editForm.querySelector('.popup__job');
+const nameInput = editProfile.querySelector('.popup__name');
+const jobInput = editProfile.querySelector('.popup__job');
 
 const mestoInput = addCard.querySelector('.popup__mesto');
 const linkInput = addCard.querySelector('.popup__links');
@@ -73,7 +68,7 @@ function togglePopup(popup) {
     popup.classList.toggle('popup_opened');
 }
 
-function profileDefult() {
+function setProfileInfo() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
 }
@@ -131,7 +126,7 @@ initialCards.forEach((cardData) => {
 
 editPopupSubmit.addEventListener('click', profileFormSubmitHandler);
 profileEditButton.addEventListener('click', () => {
-    profileDefult();
+    setProfileInfo();
     togglePopup(editProfile);
 })
 editPopupClose.addEventListener('click', () => {
