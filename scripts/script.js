@@ -30,7 +30,6 @@ const profileJob = document.querySelector('.profile__job');
 const grid = document.querySelector('.grid');
 const cardTemplate = document.querySelector('.template-card').content.querySelector('.cards');
 
-
 // Form data
 const nameInput = editForm.querySelector('.popup__name');
 const jobInput = editForm.querySelector('.popup__job');
@@ -130,8 +129,6 @@ function addCardFormSubmitHandler(evt) {
 initialCards.forEach((cardData) => {
     renderCard(cardData);
 });
-
-
 
 editPopupSubmit.addEventListener('click', profileFormSubmitHandler);
 profileEditButton.addEventListener('click', () => {
