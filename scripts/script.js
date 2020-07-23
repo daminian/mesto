@@ -70,12 +70,12 @@ const initialCards = [
 // Functions
 
 function togglePopup(popup) {
-    if (!popup.classList.contains('popup_')) {
-        nameInput.value = profileName.textContent;
-        jobInput.value = profileJob.textContent;
-    }
-
     popup.classList.toggle('popup_opened');
+}
+
+function profileDefult() {
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
 }
 
 function profileFormSubmitHandler(evt) {
@@ -83,11 +83,11 @@ function profileFormSubmitHandler(evt) {
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     togglePopup(editProfile);
-};
+}
 
 function renderCard(cardData) {
     grid.prepend(creatCard(cardData));
-};
+}
 
 function creatCard(cardData) {
     const cardElement = cardTemplate.cloneNode(true);
@@ -101,50 +101,51 @@ function creatCard(cardData) {
     cardImage.src = cardData.link;
     cardImage.alt = cardData.name;
 
-    cardLikeButton.addEventListener('click', (evt) => { 
-        evt.target.classList.toggle('cards__like_active'); 
-    }); 
+    cardLikeButton.addEventListener('click', (evt) => {
+        evt.target.classList.toggle('cards__like_active');
+    });
 
     cardDeleteButton.addEventListener('click', () => {
         cardElement.remove();
     });
 
-    cardImage.addEventListener('click',() => {
-        imagePhotoCard.src  = cardImage.src;
+    cardImage.addEventListener('click', () => {
+        imagePhotoCard.src = cardImage.src;
         imageNameCard.textContent = cardName.textContent;
 
-    togglePopup(cardPopup);
-});
+        togglePopup(cardPopup);
+    });
     return cardElement;
-};
+}
 
 function addCardFormSubmitHandler(evt) {
     evt.preventDefault();
-    renderCard({name: mestoInput.value, link: linkInput.value});
+    renderCard({ name: mestoInput.value, link: linkInput.value });
 
     togglePopup(addCard);
-};
+}
 
 initialCards.forEach((cardData) => {
     renderCard(cardData);
-});
+})
 
 editPopupSubmit.addEventListener('click', profileFormSubmitHandler);
 profileEditButton.addEventListener('click', () => {
+    profileDefult();
     togglePopup(editProfile);
-});
+})
 editPopupClose.addEventListener('click', () => {
     togglePopup(editProfile);
-});
+})
 
 addCardPopupSubmit.addEventListener('click', addCardFormSubmitHandler);
 addButton.addEventListener('click', () => {
     togglePopup(addCard);
-});
+})
 addCardClose.addEventListener('click', () => {
     togglePopup(addCard);
-});
+})
 
 cardClose.addEventListener('click', () => {
     togglePopup(cardPopup);
-});
+})
