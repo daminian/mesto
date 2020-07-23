@@ -3,21 +3,18 @@
 @import url(./__field/popup__field.css);
 @import url(./__fields/popup__fields.css);
 @import url(./__form/popup__form.css);
-@import url(./__job/popup__job.css);
-@import url(./__name/popup__name.css);
 @import url(./__overlay/popup__overlay.css);
 @import url(./__submit/popup__submit.css);
 @import url(./__add-title/popup__add-title.css);
 @import url(./__profile-title/popup__profile-title.css);
 @import url(./__image-title/popup__image-title.css);
-@import url(./__mesto/popup__mesto.css);
-@import url(./__links/popup__links.css);
 @import url(./__image/popup__image.css);
 @import url(./__image-container/popup__image-container.css);
 
 .popup {
     display: flex;
-    height: 0;
+    visibility: hidden;
+    height: 100%;
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -27,7 +24,7 @@
     width: 100%;
     z-index: 2;
     opacity: 0;
-    transition-property: height ,opacity;
+    transition-property: visibility ,opacity;
     transition-duration: 0s, 1s;
     transition-delay: 1s, 0s;
   }

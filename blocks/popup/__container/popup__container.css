@@ -1,12 +1,10 @@
 .popup__container {
     min-width: 430px;
-    display: flex;
-    flex-direction: column;
     background-color: white;
     color: #000;
     border-radius: 10px;
-    position: relative;
     box-sizing: border-box;
+    position: relative;
   }
 
   

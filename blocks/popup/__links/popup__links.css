@@ -1,9 +1,0 @@
-.popup__links {
-    margin-top: 29px;
-}
-
-@media screen and (max-width: 495px) {
-    .popup__links {
-        margin-top: 20px;
-    }
-}
