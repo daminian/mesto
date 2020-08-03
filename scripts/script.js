@@ -120,6 +120,10 @@ function addCardFormSubmitHandler(evt) {
     togglePopup(addCard);
 }
 
+function escapeClosePopup(evt, popup) {
+    if (evt.key === 'Escape') togglePopup(popup);
+}
+
 initialCards.forEach((cardData) => {
     renderCard(cardData);
 })
@@ -144,3 +148,28 @@ addCardClose.addEventListener('click', () => {
 cardClose.addEventListener('click', () => {
     togglePopup(cardPopup);
 })
+
+addCard.addEventListener('keydown', (evt) => {
+    escapeClosePopup(evt, addCard);
+})
+
+editProfile.addEventListener('keydown', (evt) => {
+    escapeClosePopup(evt, editProfile);
+})
+
+editProfile.addEventListener('click', (evt) => {
+    if (evt.target === editProfile) {
+        togglePopup(editProfile)
+    }
+})
+addCard.addEventListener('click', (evt) => {
+    if (evt.target === addCard) {
+        togglePopup(addCard)
+    }
+})
+cardPopup.addEventListener('click', (evt) => {
+    if (evt.target === cardPopup) {
+        togglePopup(cardPopup)
+    }
+})
+
