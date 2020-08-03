@@ -1,8 +1,4 @@
 .popup__fields{
-    margin: 0 auto 29px;
-    width: 83%;
-    font-size: 14px;
-    line-height: 17px;
     border: none;
     border-bottom: 1px solid rgba(0,0,0,0.5);
 }
