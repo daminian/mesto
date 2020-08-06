@@ -45,27 +45,35 @@ const showError = (inputElement, formElement, { inputErrorClass, errorClass }) =
 }
 
 const checkInputValidity = (inputElement, formElement, rest) => {
-  if(inputElement.validity.valid) {
+  if (inputElement.validity.valid) {
     hideError(inputElement, formElement, rest);
   } else {
     showError(inputElement, formElement, rest);
   }
 }
 
-const isFormValid = (inputList) => {
+const isFormInvalid = (inputList) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid
   });
 }
 
-const toggleButton = (inputList, buttonSubmit, { inactiveButtonClass }) => {
-  if (isFormValid(inputList)) {
-    buttonSubmit.classList.add(inactiveButtonClass);
-    buttonSubmit.disabled = true;
+const toggleButton = (inputList, buttonSubmit, { ...rest }) => {
+  if (isFormInvalid(inputList)) {
+    inactiveButton(buttonSubmit, rest)
   } else {
-    buttonSubmit.classList.remove(inactiveButtonClass);
-    buttonSubmit.disabled = false;
+    activeButton(buttonSubmit, rest)
   }
+}
+
+const inactiveButton = (buttonSubmit, { inactiveButtonClass }) => {
+  buttonSubmit.classList.add(inactiveButtonClass);
+  buttonSubmit.disabled = true;
+}
+
+const activeButton = (buttonSubmit, { inactiveButtonClass }) => {
+  buttonSubmit.classList.remove(inactiveButtonClass);
+  buttonSubmit.disabled = false;
 }
 
 enableValidation(formObject);
