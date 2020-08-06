@@ -8,8 +8,8 @@ const profileEditButton = document.querySelector('.profile__edit');
 const addButton = document.querySelector('.profile__add');
 
 // Submit Button
-const editPopupSubmit = editProfile.querySelector('.popup__submit');
-const addCardPopupSubmit = addCard.querySelector('.popup__submit');
+const editPopupSubmit = editProfile.querySelector('.popup__button');
+const addCardPopupSubmit = addCard.querySelector('.popup__button');
 
 // Close Button
 const editPopupClose = editProfile.querySelector('.popup__close');
@@ -28,6 +28,7 @@ const cardTemplate = document.querySelector('.template-card').content.querySelec
 const nameInput = editProfile.querySelector('.popup__name');
 const jobInput = editProfile.querySelector('.popup__job');
 
+const addCardForm = addCard.querySelector('.popup__form');
 const mestoInput = addCard.querySelector('.popup__mesto');
 const linkInput = addCard.querySelector('.popup__links');
 
@@ -116,12 +117,13 @@ function creatCard(cardData) {
 function addCardFormSubmitHandler(evt) {
     evt.preventDefault();
     renderCard({ name: mestoInput.value, link: linkInput.value });
-
+    addCardForm.reset();
     togglePopup(addCard);
 }
 
 function escapeClosePopup(evt, popup) {
-    if (evt.key === 'Escape') togglePopup(popup);
+    if (evt.key === 'Escape' && (popup.classList.contains('popup_opened'))
+    ) togglePopup(popup);
 }
 
 initialCards.forEach((cardData) => {
@@ -138,23 +140,24 @@ editPopupClose.addEventListener('click', () => {
 })
 
 addCardPopupSubmit.addEventListener('click', addCardFormSubmitHandler);
+
 addButton.addEventListener('click', () => {
     togglePopup(addCard);
 })
 addCardClose.addEventListener('click', () => {
     togglePopup(addCard);
+    addCardForm.reset();
 })
 
 cardClose.addEventListener('click', () => {
     togglePopup(cardPopup);
 })
 
-addCard.addEventListener('keydown', (evt) => {
-    escapeClosePopup(evt, addCard);
-})
-
-editProfile.addEventListener('keydown', (evt) => {
-    escapeClosePopup(evt, editProfile);
+document.addEventListener('keydown', (evt) => {
+    const formList = Array.from(document.querySelectorAll('.popup'));
+    formList.forEach((popup) => {
+        escapeClosePopup(evt, popup)
+    });
 })
 
 editProfile.addEventListener('click', (evt) => {
