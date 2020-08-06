@@ -1,4 +1,3 @@
-// Form Elements
 const formObject = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
