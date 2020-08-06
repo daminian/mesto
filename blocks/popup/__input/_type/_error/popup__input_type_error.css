@@ -1,3 +1,8 @@
+<<<<<<< HEAD:blocks/popup/__input/_type/_error/popup__input_type_error.css
 .popup__input_type_error {
     border-bottom: 1px solid #FF0000;
+=======
+.popup__fields_type_error {
+    border-bottom: 1px solid #FF0000;
+>>>>>>> 5f53146c05a1f35b2a0a39ac6ab688069576b368:blocks/popup/__fields/_type/_error/popup__fields_type_error.css
 }
