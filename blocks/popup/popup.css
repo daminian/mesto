@@ -1,20 +1,17 @@
 @import url(./__close/popup__close.css);
 @import url(./__container/popup__container.css);
-@import url(./__field/popup__field.css);
-@import url(./__fields/popup__fields.css);
-@import url(./__fields/_type/_error/popup__fields_type_error.css);
-@import url(./__fields-error/popup__fields-error.css);
+@import url(./__error/popup__error.css);
 @import url(./__form/popup__form.css);
-@import url(./__overlay/popup__overlay.css);
-@import url(./__submit/popup__submit.css);
-@import url(./__submit/_inactive/popup__submit_inactive.css);
 @import url(./__add-title/popup__add-title.css);
 @import url(./__profile-title/popup__profile-title.css);
 @import url(./__image-title/popup__image-title.css);
 @import url(./__image/popup__image.css);
 @import url(./__image-container/popup__image-container.css);
-@import url(./__fieldset/popup__fieldset.css);
 @import url(./__label/popup__label.css);
+@import url(./__button/popup__button.css);
+@import url(./__input/popup__input.css);
+@import url(./__input/_type/_error/popup__input_type_error.css);
+@import url(./__button/_disabled/popup__button_disabled.css);
 
 .popup {
     display: flex;
