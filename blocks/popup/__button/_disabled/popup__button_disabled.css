@@ -1,0 +1,4 @@
+.popup__button_disabled {
+    opacity: 0.2;
+    margin: 24px auto 36px;
+  }
