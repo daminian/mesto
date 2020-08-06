@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 .popup__form {
     display: flex;
     flex-direction: column;
     position: relative;
-=======
-.popup__form {
-    position: relative;
->>>>>>> 5f53146c05a1f35b2a0a39ac6ab688069576b368
 }
