@@ -4,14 +4,16 @@ const imagePhotoCard = cardPopup.querySelector('.popup__image');
 import escapeClosePopup from './index.js';
 
 export class Card {
-    constructor(name, link) {
-        this._name = name;
-        this._link = link;
+    constructor(data, cardSelector) {
+        this._name = data.name;
+        this._link = data.link;
+
+        this._cardSelector = cardSelector;
     }
 
     _getTemplate() {
         const cardElement = document
-            .querySelector('.template-card')
+            .querySelector(this._cardSelector)
             .content
             .querySelector('.cards')
             .cloneNode(true);
@@ -35,7 +37,7 @@ export class Card {
         imagePhotoCard.src = this._link;
         imageNameCard.textContent = this._name;
         cardPopup.classList.add('popup_opened');
-        document.addEventListener('keydown', escapeClosePopup);
+        document.addEventListener('keyup', escapeClosePopup);
     }
 
     _likeToggler() {
@@ -44,6 +46,7 @@ export class Card {
 
     _deleteCard() {
         this._element.remove();
+        this._element = null;
     }
 
     generateCard() {

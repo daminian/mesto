@@ -25,14 +25,6 @@
             <button class="profile__add"></button>
         </section>
         <section class="grid">
-            <template class="template-card">
-                <div class="cards">
-                    <button type="button" class="cards__trash"></button>
-                    <img alt="" class="cards__photo">
-                    <h2 class="cards__name"></h2>
-                    <button class="cards__like"></button>
-                </div>
-            </template>
         </section>
     </main>
     <footer class="footer root__content">
@@ -72,7 +64,7 @@
                         placeholder="Ссылка на картинку" required>
                     <span id="url-error" class="popup__error"></span>
                 </label>
-                <button type="submit" class="popup__button" disabled>Сохранить</button>
+                <button type="submit" class="popup__button popup__button_disabled" disabled>Сохранить</button>
             </form>
         </div>
     </section>
@@ -84,12 +76,16 @@
             </figure>
         </div>
     </section>
-    <script src="./scripts/FormValidator.js" type="module"></script>
+    <template class="template-card">
+        <div class="cards">
+            <button type="button" class="cards__trash"></button>
+            <img alt="" class="cards__photo">
+            <h2 class="cards__name"></h2>
+            <button class="cards__like"></button>
+        </div>
+    </template>
     <script src="./scripts/index.js" type="module"></script>
-    <script src="./scripts/initial-cards.js" type="module"></script>
-    <script src="./scripts/card.js" type="module"></script>
-    
-    
+
 </body>
 
 </html>
