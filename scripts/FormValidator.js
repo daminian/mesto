@@ -67,12 +67,12 @@ export class FormValidator {
         }
     }
 
-    inactiveButton(buttonSubmit) {
+    _inactiveButton(buttonSubmit) {
         buttonSubmit.classList.add(this._inactiveButtonClass);
         buttonSubmit.disabled = true;
     }
 
-    activeButton(buttonSubmit) {
+    _activeButton(buttonSubmit) {
         buttonSubmit.classList.remove(this._inactiveButtonClass);
         buttonSubmit.disabled = false;
     }
