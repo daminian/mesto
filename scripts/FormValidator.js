@@ -61,9 +61,9 @@ export class FormValidator {
 
     _toggleButton(inputList, buttonSubmit) {
         if (this._isFormInvalid(inputList)) {
-            this.inactiveButton(buttonSubmit)
+            this._inactiveButton(buttonSubmit)
         } else {
-            this.activeButton(buttonSubmit)
+            this._activeButton(buttonSubmit)
         }
     }
 
