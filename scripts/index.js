@@ -82,16 +82,15 @@ function addCardFormSubmitHandler(evt) {
 }
 
 export default function escapeClosePopup(evt) {
+    const popupActive = document.querySelector('.popup_opened')
     if (evt.key === 'Escape') {
-        closePopup(editProfile);
-        closePopup(addCard);
-        closePopup(cardPopup);
+        closePopup(popupActive);
     }
 
 }
 
 // Редактор Профеля
-editPopupSubmit.addEventListener('click', profileFormSubmitHandler);
+editProfile.addEventListener('submit', profileFormSubmitHandler);
 profileEditButton.addEventListener('click', () => {
     setProfileInfo();
     openPopup(editProfile);
@@ -112,7 +111,7 @@ initialCards.forEach((item) => {
     renderCard(cardElement);
 });
 
-addCardPopupSubmit.addEventListener('click', addCardFormSubmitHandler);
+addCard.addEventListener('submit', addCardFormSubmitHandler);
 addButton.addEventListener('click', () => {
     openPopup(addCard);
 })
