@@ -11,10 +11,6 @@ const cardPopup = document.querySelector('.popup-card');
 const profileEditButton = document.querySelector('.profile__edit');
 const addButton = document.querySelector('.profile__add');
 
-// Submit Button
-const editPopupSubmit = editProfile.querySelector('.popup__button');
-const addCardPopupSubmit = addCard.querySelector('.popup__button');
-
 // Close Button
 const editPopupClose = editProfile.querySelector('.popup__close');
 const addCardClose = addCard.querySelector('.popup__close');
