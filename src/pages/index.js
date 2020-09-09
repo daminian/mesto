@@ -25,7 +25,7 @@ import { PopupWithImage } from '../components/PopupWithImage.js';
 import { UserInfo } from '../components/UserInfo.js';
 
 //Css
-import '../../pages/index.css';
+import './index.css';
 
 
 // Информация о пользователе
@@ -52,15 +52,18 @@ profileEditButton.addEventListener('click', () => {
 
 
 // Добавление карточек
+function createCard(element = {name: element.name, link: element.link}) {
+    const card = new Card(element, cardTemplate, () => cardImagePopup.open(element));
+    const cardElement = card.generateCard();
+    cardList.addItem(cardElement); 
+}
+
 const addCardPopup = new PopupWithForm({
     popupSelector: addCard,
-    handleSubmitForm: (addCardForm) => {
-        const newCard = new Card(addCardForm = {
-            name: mestoInput.value,
-            link: linkInput.value
-        }, cardTemplate, () => cardImagePopup.open(addCardForm));
-        const newCardElement = newCard.generateCard();
-        cardList.addItem(newCardElement);
+    handleSubmitForm: (addCardForm) => {createCard(addCardForm = {
+        name: mestoInput.value,
+        link: linkInput.value
+    })
     }
 });
 addCardPopup.setEventListeners();
@@ -76,18 +79,14 @@ cardImagePopup.setEventListeners();
 //Рендер карточек
 const cardList = new Section({
     items: initialCards,
-    renderer: (item) => {
-        const card = new Card(item, cardTemplate, () => cardImagePopup.open(item));
-        const cardElement = card.generateCard();
-        cardList.addItem(cardElement);
-    }
+    renderer: (item) => {createCard(item);}
 }, grid);
 
 cardList.renderItems();
 
 //Валидация
-const ProfileValidate = new FormValidator(formObject, EditProfileForm);
-ProfileValidate.enableValidation()
+const profileValidate = new FormValidator(formObject, EditProfileForm);
+profileValidate.enableValidation()
 
-const AddCardValidate = new FormValidator(formObject, addCardForm);
-AddCardValidate.enableValidation()
+const addCardValidate = new FormValidator(formObject, addCardForm);
+addCardValidate.enableValidation()
