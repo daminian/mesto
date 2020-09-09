@@ -22,7 +22,10 @@ export const jobInput = editProfile.querySelector('.popup__job');
 
 export const addCardForm = addCard.querySelector('.popup__form');
 export const mestoInput = addCard.querySelector('.popup__mesto');
-export const linkInput = addCard.querySelector('.popup__links'); 
+export const linkInput = addCard.querySelector('.popup__links');
+
+export const cardImage = cardPopup.querySelector('.popup__image');
+export const cardName = cardPopup.querySelector('.popup__name');
 
 export const formObject = {
     formSelector: '.popup__form',

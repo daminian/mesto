@@ -30,7 +30,7 @@ export class Card {
 
 
     _likeToggler() {
-        this._element.querySelector('.cards__like').classList.toggle('cards__like_active');
+        this._cardLike.classList.toggle('cards__like_active');
     }
 
     _deleteCard() {
@@ -40,10 +40,13 @@ export class Card {
 
     generateCard() {
         this._element = this._getTemplate();
+        this._cardPhoto = this._element.querySelector('.cards__photo');
+        this._cardName = this._element.querySelector('.cards__name');
         this._eventListener();
 
-        this._element.querySelector('.cards__photo').src = this._link;
-        this._element.querySelector('.cards__name').textContent = this._name;
+        this._cardPhoto.src = this._link;
+        this._cardPhoto.alt = this._name;
+        this._cardName.textContent = this._name;
 
         return this._element;
     }
