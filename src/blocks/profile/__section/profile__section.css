@@ -1,0 +1,21 @@
+.profile__section {
+    display: grid;
+    grid-template-areas: 
+        'avatar name button'
+        'avatar job job';
+    column-gap: 17px;
+    row-gap: 16px;
+    padding-right: 265px;
+}
+
+@media screen and (max-width: 540px) {
+    .profile__section {
+        margin: 0;
+        grid-template-areas: 
+            'avatar avatar'
+            'name button'
+            'job job';
+        align-items: center;
+        padding-right: 0;
+    }
+}

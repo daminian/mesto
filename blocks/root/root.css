@@ -1,9 +1,0 @@
-@import url(./__content/root__content.css);
-
-.root {
-    background-color: #000000;
-    font-family: 'Inter', 'Arial', sans-serif;
-    text-rendering: optimizeLegibility;
-    margin: 0 auto;
-    color: #ffffff;
-}

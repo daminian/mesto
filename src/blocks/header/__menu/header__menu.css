@@ -1,0 +1,10 @@
+.header__menu {
+    border-bottom: 1px solid rgba(84,84,84,0.7);
+    padding-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__menu {
+        padding-bottom: 31px;
+    }
+}

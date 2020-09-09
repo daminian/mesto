@@ -1,7 +1,0 @@
-.cards__name {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 0;
-    padding: 21px 15px;
-}
