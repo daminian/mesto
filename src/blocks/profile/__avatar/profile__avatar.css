@@ -1,8 +1,16 @@
 .profile__avatar {
     grid-area: avatar;
     max-width: 120px;
+    max-height: 120px;
     border-radius: 50%;
 }
+
+.profile__avatar:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.profile__avatar:hover::after {}
 
 @media screen and (max-width:540px) {
     .profile__avatar {
