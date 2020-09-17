@@ -3,6 +3,7 @@
     max-width: 120px;
     max-height: 120px;
     border-radius: 50%;
+    position: relative;
 }
 
 .profile__avatar:hover {
@@ -10,7 +11,16 @@
     opacity: 0.8;
 }
 
-.profile__avatar:hover::after {}
+.profile__avatar:hover::after {
+    content: " ";
+    background-image: url(../../../images/edit.svg);
+    position: absolute;
+    left: 38%;
+    top: 33%;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+}
 
 @media screen and (max-width:540px) {
     .profile__avatar {
