@@ -10,9 +10,9 @@ export class Section {
     }
 
 
-    renderItems() {
-        this._items.forEach((item) => {
-            this._renderer(item);
+    renderItems(data, userId) {
+        data.forEach((item, userId) => {
+            this._renderer(item, userId);
         });
     }
 }

@@ -6,9 +6,6 @@
     padding: 0;
     border: none;
     background-color: #fff;
-    justify-self: end;
-    align-self: center;
-    margin-right: 29px;
 }
 
 .cards__like:hover {

@@ -2,12 +2,11 @@
 @import url(./__photo/cards__photo.css);
 @import url(./__name/cards__name.css);
 @import url(./__trash/cards__trash.css);
-
+@import url(./__like-counter/cards__like-counter.css);
+@import url(./__like-container/cards__like-container.css);
 .cards {
     display: grid;
-    grid-template-areas:
-        'photo photo'
-        'title like';
+    grid-template-areas: 'photo photo' 'title like';
     border-radius: 10px;
     overflow: hidden;
     background-color: #fff;
