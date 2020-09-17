@@ -34,6 +34,8 @@ export const cardName = cardPopup.querySelector('.popup__name');
 export const avatarEditForm = avatarEdit.querySelector('.popup__form');
 export const avatarInput = avatarEdit.querySelector('.popup__avatar-links');
 
+export const deleteCardForm = deleteCardPopup.querySelector('.popup__form');
+
 export const formObject = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',

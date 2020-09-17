@@ -67,6 +67,11 @@ export class FormValidator {
         }
     }
 
+    loading() {
+        this._inactiveButton()
+        this._buttonSubmit.textContent = 'Сохранение'
+    }
+
     _inactiveButton() {
         this._buttonSubmit.classList.add(this._inactiveButtonClass);
         this._buttonSubmit.disabled = true;
