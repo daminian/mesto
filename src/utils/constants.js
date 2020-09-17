@@ -12,7 +12,7 @@ export const addButton = document.querySelector('.profile__add');
 // DOM Elements
 export const profileName = document.querySelector('.profile__name');
 export const profileJob = document.querySelector('.profile__job');
-export const profileAvatar = document.querySelector('.profile__avatar')
+export const profileAvatar = document.querySelector('.profile__image')
 
 // Card Template
 export const grid = '.grid';
