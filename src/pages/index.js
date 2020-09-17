@@ -19,6 +19,7 @@ import {
     avatarInput,
     avatarEditForm,
     deleteCardPopup,
+    deleteCardForm
 } from '../utils/constants.js';
 import { FormValidator } from '../components/FormValidator.js';
 import { Section } from '../components/Section.js';
@@ -40,6 +41,9 @@ addCardValidate.enableValidation()
 
 const avatarValidate = new FormValidator(formObject, avatarEditForm);
 avatarValidate.enableValidation()
+
+const deleteCardValidate = new FormValidator(formObject, deleteCardForm);
+deleteCardValidate.enableValidation()
 
 // Api
 export const api = new Api({
@@ -81,6 +85,8 @@ const addCardPopup = new PopupWithForm({
             name: mestoInput.value,
             link: linkInput.value,
         })
+        addCardValidate.loading();
+        addCardPopup.close();
     }
 }, addCard);
 addCardPopup.setEventListeners();
@@ -93,6 +99,8 @@ addButton.addEventListener('click', () => {
 export const cardDeletePopup = new PopupWithForm({
     handleSubmitForm: () => {
         deleteCard(itemDelete._id);
+        deleteCardValidate.loading();
+        cardDeletePopup.close();
     }
 }, deleteCardPopup)
 cardDeletePopup.setEventListeners();
@@ -103,6 +111,7 @@ const profileInfo = new UserInfo(profileName, profileJob, profileAvatar);
 // Редактор Профеля
 const profilePopup = new PopupWithForm({
     handleSubmitForm: () => {
+        profileValidate.loading()
         api.appDateProfileInfo({
             name: nameInput.value,
             about: jobInput.value
@@ -112,6 +121,7 @@ const profilePopup = new PopupWithForm({
             about: jobInput.value,
             avatar: profileAvatar.src
         })
+        profilePopup.close()
     }
 }, editProfile);
 profilePopup.setEventListeners();
@@ -126,6 +136,7 @@ profileEditButton.addEventListener('click', () => {
 //Редактор аватарки 
 const avatarEditPopup = new PopupWithForm({
     handleSubmitForm: () => {
+        avatarValidate.loading()
         api.appDateAvatar(avatarInput.value);
         profileAvatar.src = avatarInput.value;
     }
