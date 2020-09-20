@@ -20,7 +20,7 @@ import {
     avatarEditForm,
     deleteCardPopup,
     deleteCardForm,
-    cardTemplate
+    cardTemplate,
 } from '../utils/constants.js';
 import { FormValidator } from '../components/FormValidator.js';
 import { Section } from '../components/Section.js';
@@ -115,9 +115,10 @@ const profilePopup = new PopupWithForm({
                     about: jobInput.value,
                     avatar: profileAvatar.src
                 })
-            })
-            .then(() => {
                 profilePopup.close()
+            })
+            .catch((err) => {
+                console.error(err);
             })
             .finally(() => { renderLoading(false, EditProfileForm) })
     }
@@ -138,12 +139,10 @@ const avatarEditPopup = new PopupWithForm({
         api.updateAvatar(avatarInput.value)
             .then(() => {
                 profileAvatar.src = avatarInput.value;
+                avatarEditPopup.close()
             })
             .catch((err) => {
                 console.error(err);
-            })
-            .then(() => {
-                avatarEditPopup.close()
             })
             .finally(() => {
                 renderLoading(false, avatarEditForm)
@@ -240,12 +239,13 @@ const deleteCard = function(item) {
 }
 
 const renderLoading = function(isLoading, form) {
+    const button = form.querySelector('.popup__button');
     if (isLoading) {
-        form.querySelector('.popup__button').classList.add('popup__button_disabled');
-        form.querySelector('.popup__button').textContent = 'Сохранение...';
+        button.classList.add('popup__button_disabled');
+        button.textContent = 'Сохранение...';
     } else {
-        form.querySelector('.popup__button').classList.remove('popup__button_disabled');
-        form.querySelector('.popup__button').textContent = 'Сохранить';
+        button.classList.remove('popup__button_disabled');
+        button.textContent = 'Сохранить';
         deleteCardForm.querySelector('.popup__button').textContent = 'Да';
     }
 }
