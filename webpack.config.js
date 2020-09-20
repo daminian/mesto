@@ -9,8 +9,7 @@ module.exports = {
         filename: 'index.js'
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.m?js$/,
                 exclude: /(node_modules)/,
                 use: {
@@ -24,12 +23,12 @@ module.exports = {
                     'postcss-loader'
                 ],
             }, {
-                test: /\.(png|jpe?g|gif|woff2|woff|svg)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
+                test: /.(png|svg|jpg|gif)$/,
+                loader: 'file-loader?name=./images/[name].[ext]'
+            },
+            {
+                test: /.(eot|ttf|woff|woff2)$/,
+                loader: 'file-loader?name=./vendor/[name].[ext]',
             }, {
                 test: /\.html$/i,
                 loader: 'html-loader',

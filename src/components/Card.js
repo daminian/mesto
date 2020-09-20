@@ -27,7 +27,7 @@ export class Card {
         return cardElement;
     }
 
-    _eventListener() {
+    _setEventListeners() {
         this._element.querySelector('.cards__photo').addEventListener('click', () => {
             this._handleCardClick();
         })
@@ -56,6 +56,7 @@ export class Card {
             this._deleteCardClick()
         });
         this._element.remove();
+        this._element = null;
     }
 
     generateCard() {
@@ -63,7 +64,7 @@ export class Card {
         this._cardPhoto = this._element.querySelector('.cards__photo');
         this._cardName = this._element.querySelector('.cards__name');
         this._likeCounter = this._element.querySelector('.cards__like-counter');
-        this._eventListener();
+        this._setEventListeners();
         if (this._author._id !== this._userId) {
             this._element.querySelector('.cards__trash').remove();
         }

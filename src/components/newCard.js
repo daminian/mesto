@@ -1,8 +1,3 @@
-import { cardTemplate } from '../utils/constants.js';
-import { cardList, cardImagePopup, cardDeletePopup } from '../pages/index.js';
-import { Card } from './Card.js';
-import { api } from '../pages/index.js';
-
 let itemsCard = []
 const addClassCard = function(item, card) {
     itemsCard.unshift({
@@ -41,6 +36,7 @@ export const newCard = function(item) {
         .then((res) => {
             createCard(res, res.owner._id)
         })
+        .catch((err) => { console.error(err); })
 }
 
 const likeCard = function(card) {
@@ -58,6 +54,7 @@ const deliteLike = function(card) {
         .then((res) => {
             itemsCard.find((item) => (item.id === res._id)).class.handleLike(res.likes.length)
         })
+        .catch((err) => { console.error(err); })
 }
 
 export const deleteCard = function(item) {

@@ -1,10 +1,12 @@
+import { data } from "autoprefixer";
+
 export class Api {
     constructor(options) {
         this._url = options.url
         this._headers = options.headers
     }
 
-    appDateAvatar(data) {
+    updateAvatar(data) {
         return fetch(`${this._url}/users/me/avatar`, {
                 method: "PATCH",
                 headers: {
@@ -22,7 +24,7 @@ export class Api {
             })
     }
 
-    appDateProfileInfo(data) {
+    updateProfileInfo(data) {
         return fetch(`${this._url}/users/me`, {
                 method: "PATCH",
                 headers: {
@@ -71,7 +73,7 @@ export class Api {
                 if (res.ok) {
                     return res.json();
                 }
-                return Promise.reject(`Ошибка: ${res.status}`);
+                return Promise.reject(new Error(`Ошибка: ${res.status}`));
             })
     }
 
@@ -146,5 +148,11 @@ export class Api {
 
     getAppInfo() {
         return Promise.all([this.getInitialCards(), this.getUserInfo()]);
+    }
+
+    _getResponseData(data) {
+        if (data.ok) {
+            return data.json()
+        }
     }
 }
